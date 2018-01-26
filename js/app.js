@@ -28,12 +28,12 @@ var pike = {
 
   render: function() {
     var pike = document.getElementById('pike');
-    var fandp = document.getElementById('fandp');
+    var firstPike = document.getElementById('firstPike');
     this.calcRandCustByHour();
     this.calcTotalSold();
     var h3El = document.createElement('h3');
     h3El.textContent = this.name;
-    fandp.appendChild(h3El);
+    firstPike.appendChild(h3El);
     for (var k = 0; k < hours.length; k++) {
       var liEl = document.createElement('li');
       liEl.textContent = hours [k] + ': ' + this.totalSold[k] + ' cookies';
@@ -51,7 +51,40 @@ pike.render();
 //   avgSold: 1.2,
 //   randCustpHour: [],
 //   totalSold: [],
+//   calcRandCustByHour: function() {
+//     for (var i = 0; i < hours.length; i++) {
+//       this.randCustpHour.push (
+//         Math.floor (
+//           Math.random() * (this.maxNumCust - this.minNumCust + 1)) + this.minNumCust);
+//       console.log(this.randCustpHour[i]);
+//     }
+//   },
+
+//   calcTotalSold: function() {
+//     for (var j = 0; j < hours.length; j++) {
+//       this.totalSold.push(
+//         Math.round(this.avgSold * this.randCustpHour[j]));
+//       console.log(this.totalSold[j]);
+//     }
+//   },
+
+//   render: function() {
+//     var seaTac = document.getElementById('seaTac');
+//     var seaTacLoc = document.getElementById('seaTacLoc');
+//     this.calcRandCustByHour();
+//     this.calcTotalSold();
+//     var h3El = document.createElement('h3');
+//     h3El.textContent = this.name;
+//     seaTac.appendChild(h3El);
+//     for (var k = 0; k < hours.length; k++) {
+//       var liEl = document.createElement('li');
+//       liEl.textContent = hours [k] + ': ' + this.totalSold[k] + ' cookies';
+//       console.log(liEl);
+//       seaTacLoc.appendChild(liEl);
+//     }
+//   }
 // };
+// seaTac.render();
 
 // var seaCent = {
 //   storeLoc: 'Seattle Center',
