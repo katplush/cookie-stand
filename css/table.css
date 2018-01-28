@@ -1,0 +1,46 @@
+/* * {
+  background-color: bisque;
+}
+
+table,
+tr,
+td {
+  background-color: lightsalmon;
+  border: 5px solid darkgrey;
+  border-radius: 80px;
+  padding: 20px;
+}
+
+td {
+  border-radius: 25px;
+  color: salmon;
+  background-color: white;
+  font-family: sans-serif;
+} */
+
+* {
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+h3 {
+  font-size: 22px;
+  text-align: center;
+  width: 1000px;
+  color: salmon;
+}
+
+table {
+  border: solid darkgrey 1px;
+}
+
+th {
+  width: 60px;
+  border: solid darkgrey 1px;
+}
+
+td {
+  text-align: center;
+  height: 30px;
+  border: solid darkgrey 1px;
+}
