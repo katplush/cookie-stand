@@ -36,11 +36,14 @@ function Store(storeLoc, minNumCust, maxNumCust, avgSoldByHour) {
   };
   this.calcCookiesSoldByHour();
 }
+
 var pikeStore = new Store('First and Pike', 23, 65, 6.3);
 var seaTacStore = new Store('SeaTac Airport', 3, 24, 1.2);
 var seaCentStore = new Store('Seattle Center', 11, 38, 3.7);
 var capHillStore = new Store('Capitol Hill', 20, 38, 2.3);
 var alkiStore = new Store('Alki', 2, 16, 4.6);
+
+var locations = [pikeStore, seaTacStore, seaCentStore, capHillStore, alkiStore];
 
 function makeHeaderRow(hours) {
   var table = document.getElementById('myTable');
@@ -58,6 +61,19 @@ function makeHeaderRow(hours) {
   table.appendChild(trEl);
 }
 makeHeaderRow(hours);
+
+function makeDataRows(locations) {
+  var table = document.getElementById('myTable');
+  var trEl = document.getElementById('tr');
+
+  for(var j = 0; j < locations.length; j++) {
+    var tdEl = document.createElement('td');
+    tdEl.textContent = locations[j];
+    trEl.appendChild(tdEl);
+  }
+  table.appendChild(trEl);
+}
+makeDataRows(locations);
 
 // var pikeList = {
 //   storeLoc: 'First and Pike',
