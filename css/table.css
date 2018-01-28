@@ -1,4 +1,4 @@
-* {
+/* * {
   background-color: bisque;
 }
 
@@ -16,4 +16,31 @@ td {
   color: salmon;
   background-color: white;
   font-family: sans-serif;
+} */
+
+* {
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+h3 {
+  font-size: 22px;
+  text-align: center;
+  width: 1000px;
+  color: salmon;
+}
+
+table {
+  border: solid darkgrey 1px;
+}
+
+th {
+  width: 60px;
+  border: solid darkgrey 1px;
+}
+
+td {
+  text-align: center;
+  height: 30px;
+  border: solid darkgrey 1px;
 }
