@@ -1,0 +1,19 @@
+* {
+  background-color: bisque;
+}
+
+table,
+tr,
+td {
+  background-color: lightsalmon;
+  border: 5px solid darkgrey;
+  border-radius: 80px;
+  padding: 20px;
+}
+
+td {
+  border-radius: 25px;
+  color: salmon;
+  background-color: white;
+  font-family: sans-serif;
+}
