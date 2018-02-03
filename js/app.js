@@ -4,10 +4,6 @@ var hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm
 
 var allLocations = [];
 
-var totalCookiesPerHour = 0;
-
-var netTotal = 0;
-
 function Store(storeLoc, minNumCust, maxNumCust, avgSoldByHour) {
   this.storeLoc = storeLoc;
   this.minNumCust = minNumCust;
@@ -93,29 +89,64 @@ for (var j = 0; j < allLocations.length; j++) {
   makeDataRow(j);
 }
 
-//Create Footer Row of hourly totals from all stores
-// function makeTotalRow() {
-//   var table = document.getElementById('myTable');
-//   var trEl = document.createElement('tr');
-//   var tdEl = document.createElement('td');
-//   tdEl.textContent = 'Total';
-//   trEl.appendChild(tdEl);
+// Create Footer Row of hourly totals from all stores
+function makeTotalFooter() {
+  var table = document.getElementById('myTable');
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Total';
+  trEl.setAttribute ('id', 'footerRow');
+  trEl.appendChild(tdEl);
 
-//   for(var i = 0; i < hours.length; i++) {
-//     totalCookiesPerHour = 0;
+  for(var i = 0; i < hours.length; i++) {
+    totalLocSalesPerHour = 0;
+    var totalLocSalesPerHour = 0;
+    var netTotal = 0;
+    tdEl = document.createElement('td');
 
-//     for(var j = 0; j < allLocations.length; j++) {
-//       totalCookiesPerHour += allLocations[j].cookiesSoldByHour[i];
-//     }
-//   }
-//   tdEl = document.createElement('td');
-//   tdEl.textContent = totalCookiesPerHour;
-//   trEl.appendChild(tdEl);
-//   netTotal += totalCookiesPerHour;
+    for(var j = 0; j < allLocations.length; j++) {
+      totalLocSalesPerHour += allLocations[j].cookiesSoldByHour[i];
+      netTotal += allLocations[j].totalCookies;
+    }
+    tdEl.textContent = totalLocSalesPerHour;
+    trEl.appendChild(tdEl);
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = netTotal;
+  trEl.appendChild(tdEl);
+  netTotal += totalLocSalesPerHour;
+  table.appendChild(trEl);
+}
+makeTotalFooter();
 
-//   tdEl = document.createElement('td');
-//   tdEl.textContent = netTotal;
-//   trEl.appendChild(tdEl);
-//   table.appendChild(trEl);
-// }
-// makeTotalRow();
+// this function is the event handler for the submission of a new store
+var storeForm = document.getElementById('store-form');
+
+function handleAddStore(event) {
+  event.preventDefault();
+
+  var table = document.getElementById('myTable');
+
+  if(!event.target.storename.value || !event.target.mincust.value || !event.target.maxcust.value || !event.target.avgcook.value) {
+    return alert('Required Field');
+  }
+  //target the name in the form
+  var newStoreName = event.target.storename.value;
+  var newStoreMinCust = parseInt(event.target.mincust.value);
+  var newStoreMaxCust = parseInt(event.target.maxcust.value);
+  var newStoreAvgCook = parseInt(event.target.avgcook.value);
+
+  new Store(newStoreName, newStoreMinCust, newStoreMaxCust, newStoreAvgCook);
+
+  var footerRow = document.getElementById('footerRow');
+  table.removeChild(footerRow);
+
+  makeDataRow(allLocations.length - 1);
+  makeTotalFooter();
+
+  event.target.storename.value = null;
+  event.target.mincust.value = null;
+  event.target.maxcust.value = null;
+  event.target.avgcook.value = null;
+}
+storeForm.addEventListener('submit', handleAddStore);
