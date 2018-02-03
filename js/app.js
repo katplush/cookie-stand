@@ -95,8 +95,8 @@ function makeTotalFooter() {
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Total';
+  trEl.setAttribute ('id', 'footerRow');
   trEl.appendChild(tdEl);
-
 
   for(var i = 0; i < hours.length; i++) {
     totalLocSalesPerHour = 0;
@@ -119,37 +119,41 @@ function makeTotalFooter() {
 }
 makeTotalFooter();
 
-//this function is the event handler for the submission of a new store
-// var storeForm = document.getElementById('store-form');
+// this function is the event handler for the submission of a new store
+var storeForm = document.getElementById('store-form');
 
-// function handleAddStore(event) {
-//   event.preventDefault();
+function handleAddStore(event) {
+  event.preventDefault();
 
-//   if(!event.target.storename.value || !event.target.mincust.value || !event.target.maxcust.value || !event.target.avgcook.value) {
-//     return alert('Required Field');
-//   }
-//   //target the name in the form
-//   var newStoreName = event.target.storename.value;
-//   var newStoreMinCust = parseInt(event.target.mincust.value);
-//   var newStoreMaxCust = parseInt(event.target.maxcust.value);
-//   var newStoreAvgCook = parseInt(event.target.avgcook.value);
+  var table = document.getElementById('myTable');
 
-//   var newStore = new MakeLocation(newStoreName, newStoreMinCust, newStoreMaxCust, newStoreAvgCook);
+  if(!event.target.storename.value || !event.target.mincust.value || !event.target.maxcust.value || !event.target.avgcook.value) {
+    return alert('Required Field');
+  }
+  //target the name in the form
+  var newStoreName = event.target.storename.value;
+  var newStoreMinCust = parseInt(event.target.mincust.value);
+  var newStoreMaxCust = parseInt(event.target.maxcust.value);
+  var newStoreAvgCook = parseInt(event.target.avgcook.value);
 
-//   var renderAllInput = function() {
-//     storeForm.innerHTML = '';
-//     for (var i = 0; i < newStore.length; i++) {
-//       storeForm.appendChild(newStore[i].render());
-//     }
-//   };
+  new Store(newStoreName, newStoreMinCust, newStoreMaxCust, newStoreAvgCook);
 
-//   allLocations[allLocations.length - 1].render();
-//   makeDataRow(newStore);
+  var footerRow = document.getElementById('footerRow');
+  table.removeChild(footerRow);
 
-//   event.target.storename.value = null;
-//   event.target.mincust.value = null;
-//   event.target.maxcust.value = null;
-//   event.target.avgcook.value = null;
-// }
-// storeForm.addEventListenr('submit', handleAddStore);
-// //render();
+  // var renderAllInput = function() {
+  //   storeForm.innerHTML = '';
+  //   for (var i = 0; i < newStore.length; i++) {
+  //     storeForm.appendChild(newStore[i].render());
+  //   }
+  // };
+
+  makeDataRow(allLocations.length - 1);
+  makeTotalFooter();
+
+  event.target.storename.value = null;
+  event.target.mincust.value = null;
+  event.target.maxcust.value = null;
+  event.target.avgcook.value = null;
+}
+storeForm.addEventListener('submit', handleAddStore);
