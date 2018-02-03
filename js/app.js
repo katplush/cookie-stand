@@ -141,13 +141,6 @@ function handleAddStore(event) {
   var footerRow = document.getElementById('footerRow');
   table.removeChild(footerRow);
 
-  // var renderAllInput = function() {
-  //   storeForm.innerHTML = '';
-  //   for (var i = 0; i < newStore.length; i++) {
-  //     storeForm.appendChild(newStore[i].render());
-  //   }
-  // };
-
   makeDataRow(allLocations.length - 1);
   makeTotalFooter();
 
