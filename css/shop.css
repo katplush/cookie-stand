@@ -1,4 +1,3 @@
-
 * {
   font-family: 'calibri light', Arial, Helvetica, sans-serif;
   color: #665544;
@@ -25,11 +24,6 @@ body {
   width: 90%;
   margin: 0 auto;
 }
-
-#header {
-  overflow: auto;
-}
-
 #content {overflow: auto;}
 #nav, #feature, #footer {
   margin: 1%;
@@ -51,28 +45,31 @@ li {
 #feature, .article {
   height: 10em;
   margin-bottom: 1em;
-  background-color: white;
+  background-color: bisque
 }
 #realSam {
-  font-family: 'Cabin Sketch', cursive, sans-serif;
-  margin: 1%;
+  font-family: 'Handlee', cursive;
   font-size: 25px;
   color: salmon;
 }
 
-#samPic {
-  margin: 1%;
+#cutter {
   max-width: 50%;
   max-height: 50%;
 }
 
-#chinook {
-  max-width: 10%;
-  max-height: 10%;
+#fish {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+#shirt {
+  max-width: 50%;
+  max-height: 50%;
 }
 
 #footerFont {
-  font-size: 15px;
+  font-size: 10px;
 }
 
 .time {
@@ -80,3 +77,8 @@ li {
   font-size: 15px;
   color: sienna;
   }
+
+
+
+
+

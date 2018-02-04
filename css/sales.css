@@ -1,0 +1,33 @@
+* {
+  font-family: 'calibri light', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+h3 {
+  font-size: 22px;
+  text-align: center;
+  width: 1000px;
+  color: salmon;
+}
+
+table, form {
+  border: solid darkgrey 1px;
+  background-color: bisque;
+}
+
+th {
+  width: 60px;
+  border: solid darkgrey 1px;
+}
+
+td {
+  text-align: center;
+  height: 30px;
+  border: solid darkgrey 1px;
+}
+
+#salmonPic {
+  margin: 1%;
+  max-width: 20%;
+  max-height: 20%;
+}
