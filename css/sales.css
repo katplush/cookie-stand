@@ -1,5 +1,5 @@
 * {
-  font-family: Helvetica;
+  font-family: 'calibri light', Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
 
@@ -27,7 +27,6 @@ td {
 }
 
 #salmonPic {
-  inline-size: 10%;
   margin: 1%;
   max-width: 20%;
   max-height: 20%;

@@ -1,6 +1,6 @@
 
 * {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'calibri light', Arial, Helvetica, sans-serif;
   color: #665544;
   text-align: center;
 }
@@ -51,15 +51,17 @@ li {
 #feature, .article {
   height: 10em;
   margin-bottom: 1em;
-  background-color: bisque
+  background-color: white;
 }
 #realSam {
-  font-family: 'Handlee', cursive;
+  font-family: 'Cabin Sketch', cursive, sans-serif;
+  margin: 1%;
   font-size: 25px;
   color: salmon;
 }
 
 #samPic {
+  margin: 1%;
   max-width: 50%;
   max-height: 50%;
 }
@@ -70,7 +72,7 @@ li {
 }
 
 #footerFont {
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .time {
