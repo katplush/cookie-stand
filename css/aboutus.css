@@ -1,0 +1,74 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #665544;
+  text-align: center;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: lightsalmon
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+}
+#content {overflow: auto;}
+#nav, #feature, #footer {
+  margin: 1%;
+}
+.column1, .column2, .column3 {
+  width: 31.3%;
+  float: left;
+  margin: 1%;
+}
+.column3 {margin-right: 0%;}
+li {
+  display: inline;
+  padding: 0.5em;
+}
+#nav, #footer {
+  background-color: salmon;
+  padding: 0.5em 0;
+}
+#feature, .article {
+  height: 10em;
+  margin-bottom: 1em;
+  background-color: bisque
+}
+#realSam {
+  font-family: 'Handlee', cursive;
+  font-size: 25px;
+  color: salmon;
+}
+
+#familypic {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+#frostcookie {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+#footerFont {
+  font-size: 10px;
+}
+
+.time {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: sienna;
+  }
